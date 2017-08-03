@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.product;
+import com.example.demo.model.respositories.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +12,8 @@ import javax.validation.Valid;
 
 @Controller
 public class MainController {
+    @Autowired
+    ProductRepository productRepository;
     @GetMapping("/")
     public String showIndex(Model model)
     {
