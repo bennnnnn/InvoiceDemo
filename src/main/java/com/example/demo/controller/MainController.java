@@ -26,6 +26,9 @@ public class MainController {
 }
 @PostMapping("/addProduct")
 public String postProduct(@Valid @ModelAttribute("newProduct") product product, BindingResult bindingResult){
+        System.out.println(bindingResult.toString());
+    System.out.println(product.getDescription());
+
         if(bindingResult .hasErrors()){
             return "addProduct";
         }
